@@ -1,0 +1,78 @@
+<body id="page-study">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="/images/icons/back.svg" alt="Voltar">
+                </a>
+                <img src="/images/logo.svg" alt="Proffy">
+            </div>
+
+            <div class="header-content">
+                <strong>Estes são os proffys disponíveis</strong>
+                <form id="search-teachers" action="/study">
+                    <div class="select-block">
+                        <label for="subject">Matéria</label>
+                        <select name="subject" id="subject">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            {{!-- @root in handlebars is a reference to the root main object which contain all variables sended by 
+                            viewController .render() method --}}
+                            {{#each subjects}}
+                                <option value="{{this.id}}" {{isSelected @root.filters.subject this.id}}>{{this.description}}</option>
+                            {{/each}}
+                            
+                        </select>
+
+                    </div>
+
+                    <div class="select-block">
+                        <label for="weekday">Dia da semana</label>
+                        <select name="weekday" id="weekday">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            {{#each weekdays}}
+                                <option value="{{this.id}}" {{isSelected @root.filters.weekday this.id}}>{{this.description}}</option>
+                            {{/each}}
+                        </select>
+
+                    </div>
+
+                    <div class="input-block">
+                        <label for="time">Hora</label>
+                        <input type="time" name="time" id="time" value="{{filters.time}}" > 
+                    </div>
+
+                    <button type="submit">Filtrar</button>
+                </form>
+            </div>
+
+        </header>
+
+        <main>
+            {{#if proffys}}
+                {{#each proffys}}
+                    <article class="teacher-item">
+                        <header>
+                            <img src="{{this.avatar}}" alt="Diego Fernandes">
+                            <div>
+                                <strong>{{this.name}}</strong>
+                                <span>{{this.description}}</span>
+                            </div>
+                        </header> 
+                        <p>{{this.bio}}</p>
+                        <footer>
+                            <p>Preço/hora <strong>{{convertPriceInReais this.cost}}</strong></p>
+                            <a target="_blank" href="https://api.whatsapp.com/send?l=pt_BR&phone={{this.whatsapp}}&text=Tenho interesse na sua aula de {{this.subject}} {{this.name}}">
+                                <img src="/images/icons/whatsapp.svg" alt="Whatsapp">
+                                Entrar em contato
+                            </a>
+                        </footer>
+                    </article>
+                {{/each}}
+            {{else}}
+                <h1 class="no-results">Nenhum professor encontrado para a sua pesquisa.</h1>
+            {{/if}}
+            
+        </main>
+    </div>
+    
+</body>

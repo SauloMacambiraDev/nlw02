@@ -1,0 +1,187 @@
+
+#login {        
+    background-image: linear-gradient(to right bottom, var(--color-primary-darker), var(--color-primary-lighter));
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+main .intro-screen-section {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 60%;
+}
+
+#logo {
+    width: 100%;
+}
+
+.intro-screen-section p {
+    margin-top: 1rem;
+    font: 500 3rem Poppins;
+    color: var(--color-text-in-primary);
+    width: 100%;
+}
+
+#purple-heart {
+    height: 2rem;
+    transform: translateY(2px);
+    margin-left: 1rem;
+}
+
+main .login-screen-section {
+    background-color: white;
+    /* clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-screen-section .login-content {
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.login-content form {
+    width: 100%;
+}
+
+.login-content h1 {
+    color: var(--color-text-title);
+    border-bottom: 2px solid var(--color-line-in-white);
+    width: 100%;
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.login-content form input[type=email],
+.login-content form input[type=password] {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.5rem 1.6rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-line-in-white);
+    background: var(--color-input-background);
+    color: var(--color-text-base);
+    outline: none;
+}
+
+form label {
+    color: var(--color-text-complement);
+    margin: 1rem 0;
+}
+
+form .btn {
+    outline: none;
+    padding: 2rem;
+    color: var(--color-box-base);
+    display: block;
+    width: 100%;
+    font: 700 2.5rem Poppins;
+    border: none;
+    border-radius: 8px;
+}
+
+button {
+    margin-bottom: 2rem;
+    background-color: var(--color-secondary);
+    transition: background-color .2s;
+}
+
+button:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+form a {
+    text-align: center;
+    background: var(--color-primary);
+    
+    transition: background-color .2s;
+}
+
+form a:hover {
+    background: var(--color-primary-darker);    
+}   
+
+/* CHECKBOX */
+.checkbox-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+#rememberme {
+    /* display: none; */
+}
+
+.checkbox-content label {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color:#F8F8FC;
+    border-radius: 8px;
+    border: 1px solid #E6E6F0;
+
+    transition: all .2s;
+}
+
+.checkbox-content label:hover {
+    background-color: #eeeeee;
+}
+
+.checkbox-content label::after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 7px;
+    height: 14px;
+    border-right: 5px solid var(--color-secondary);
+    border-bottom: 5px solid var(--color-secondary);
+    transform: rotate(40deg) scale(3);
+    opacity: 0;
+    transition: all .4s;
+}
+
+.checkbox-content input[type="checkbox"]:checked ~ label::after {
+    transform: rotate(40deg) scale(1);
+    opacity: 1;
+}
+
+
+.checkbox-content span {
+    padding-left: 35px;
+    color: var(--color-text-complement);
+}
+
+/* CHECKBOX END */
+
+@media (max-width: 700px) {
+    #login main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr;
+    } 
+    
+    main .intro-screen-section p{
+        display: none;
+    }
+    
+    main section.login-screen-section {
+        border-radius: 20px 20px 0 0;
+    }
+
+}

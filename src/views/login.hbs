@@ -1,0 +1,32 @@
+<body id="login">
+    <main>
+        <section class="intro-screen-section">
+            <img id="logo" src="/images/logo.svg" alt="Logo">
+            <p>Deseja levar seus estudos para o próximo nível?</p>
+            <p>Venha fazer parte! <img id="purple-heart" src="/images/icons/purple-heart.svg" alt="Purple heart"></p>
+        </section>
+        <section class="login-screen-section">
+            <div class="login-content">
+                <form method="POST">
+                    <h1>Faça o Login</h1>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" required>
+                    
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" required>
+                    
+                    <div class="checkbox-content">
+                        <input id="rememberme" name="rememberme" type="checkbox">
+                        <label for="rememberme"></label>
+                        <span>Lembrar de mim</span>
+                    </div>
+                    
+
+                    <button class="btn" type="submit">Entrar</button>
+                    <a class="btn" href="/register">Cadastrar</a>
+                </form>
+            </div>
+        </section>
+    </main>
+    {{>loading}}
+</body>

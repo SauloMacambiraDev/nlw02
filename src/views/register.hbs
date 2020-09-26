@@ -1,0 +1,51 @@
+<body id="register-body">
+    <header>
+            <div class="top-bar">
+                <a href="/login">
+                    <img src="/images/icons/back.svg" alt="Voltar">
+                </a>
+                <a href="/">
+                    <img src="/images/logo.svg" alt="Logo">
+                </a>
+            </div>
+
+            <div class="header-content">
+                <h1>Aqui você encontra os melhores professores!</h1>
+                <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+
+            </div>
+        </header>
+    <main>
+
+        <form id="create-student" method="POST">
+            <fieldset>
+                <legend>Cadastro</legend>
+
+                <div class="input-block">
+                    <label for="name">Nome completo</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                
+                <div class="input-block">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                
+                <div class="input-block">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <div class="input-block">
+                    <label for="confirmPassword">Confirme sua senha</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required>
+                </div>
+
+            </fieldset>
+
+            <button type="submit">Salvar</button>
+
+        </form>
+    </main>
+    {{>loading}}
+</body>

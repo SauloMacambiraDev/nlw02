@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8257E5">
+    
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/main.css">
+    {{!-- Importing necessary Css files --}}
+    {{#each styleFiles}}
+        <link rel="stylesheet" href="{{this}}">
+    {{/each}}
+    
+    {{!-- Importing necessary Js files --}}
+    {{#each jsFiles}}
+        <script src="{{this}}" defer></script>
+    {{/each}}
+</head>
+    {{{body}}}
+</html>
